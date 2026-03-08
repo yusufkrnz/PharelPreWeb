@@ -1,0 +1,168 @@
+.modulesSection {
+    padding: 6rem 0;
+    background: white;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.preTitle {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+
+.title {
+    font-family: var(--font-main);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--color-primary-dark);
+    margin-bottom: 1rem;
+}
+
+.serif {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 700;
+}
+
+.highlight {
+    color: var(--color-primary);
+}
+
+.subtitle {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Compact Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.card {
+    background: #fbfbf9;
+    border: 1px solid rgba(26, 71, 42, 0.05);
+    border-radius: 16px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    background: white;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+    border-color: rgba(26, 71, 42, 0.15);
+}
+
+.iconBox {
+    width: 44px;
+    height: 44px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    margin-bottom: 1.25rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+
+.card:hover .iconBox {
+    background: var(--color-primary);
+    color: white;
+}
+
+.cardTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.5rem;
+}
+
+.cardDesc {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+}
+
+.learnMore {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.card:hover .learnMore {
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .modulesSection {
+        padding: 4rem 0;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+}
+
+/* Static Trust Logos Section - Ultra Thin */
+.trustLogos {
+    width: 100%;
+    padding-top: 1rem;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+.logoItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trustLogo {
+    height: 30px;
+    width: auto;
+    max-width: 120px;
+    filter: grayscale(1) opacity(0.3);
+    transition: all 0.4s ease;
+}
+
+.trustLogo:hover {
+    filter: grayscale(0) opacity(1);
+    transform: scale(1.05);
+}

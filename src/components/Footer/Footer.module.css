@@ -1,0 +1,144 @@
+.footer {
+    background-color: #0d1a14;
+    /* Deep, high-end emerald/black as in screenshot */
+    color: #e0e0e0;
+    padding: 6rem 0 4rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-family: var(--font-main);
+}
+
+.footerTop {
+    margin-bottom: 6rem;
+}
+
+.linksGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    /* 5 columns from screenshot, plus a spacer or 6th for balance */
+    gap: 3rem;
+}
+
+@media (max-width: 1024px) {
+    .linksGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .linksGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+.linkCol h4 {
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+}
+
+.linkCol ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.linkCol a {
+    color: #ffffff;
+    opacity: 0.55;
+    /* Muted as in screenshot */
+    font-size: 0.75rem;
+    /* Very small text as in screenshot */
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.linkCol a:hover {
+    opacity: 1;
+}
+
+/* Bottom Area */
+.footerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 4rem;
+    /* No border needed as per screenshot style */
+}
+
+.bottomBrandArea {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.brand {
+    font-family: var(--font-heading);
+    /* Serif font */
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+}
+
+.copyright {
+    font-size: 0.7rem;
+    color: #ffffff;
+    opacity: 0.45;
+}
+
+.bottomSocialArea {
+    display: flex;
+    align-items: center;
+}
+
+.linkedinLink {
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.linkedinLink:hover {
+    opacity: 1;
+}
+
+.linkedinLink svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+    color: #ffffff;
+}
+
+.linkedinLink img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    /* Makes it crisp white */
+}
+
+@media (max-width: 600px) {
+    .footerBottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .bottomSocialArea {
+        width: 100%;
+        justify-content: flex-end;
+    }
+}

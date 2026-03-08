@@ -1,0 +1,638 @@
+.workflowSection {
+    padding: 8rem 0;
+    background: #ffffff;
+    /* Keeping section white for contrast, but nodes will match icons */
+    overflow: hidden;
+}
+
+.pharelBrand {
+    color: var(--color-primary);
+    font-style: italic;
+}
+
+.smallBrand {
+    color: var(--color-primary);
+    font-style: italic;
+    font-size: 0.8em;
+    font-weight: 700;
+}
+
+.header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+}
+
+.title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--color-primary-dark);
+}
+
+.serif {
+    font-family: var(--font-heading);
+    font-style: italic;
+    color: var(--color-primary);
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+}
+
+/* Pipeline Switcher Tabs */
+.pipelineSwitcher {
+    display: inline-flex;
+    background: #f8f8f6;
+    padding: 0.4rem;
+    border-radius: 16px;
+    gap: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.pipelineTab {
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pipelineTabActive {
+    background: white;
+    color: var(--color-primary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Base Diagram Area */
+.diagramArea {
+    position: relative;
+    max-width: 1000px;
+    margin: 4rem auto;
+    width: 100%;
+    aspect-ratio: 1000 / 400;
+    /* PC Ratio */
+}
+
+.svgLayer,
+.svgLayerMobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.svgLayerMobile {
+    display: none;
+}
+
+.mobileOnlyG {
+    display: none;
+}
+
+.line {
+    fill: none;
+    stroke: rgba(26, 71, 42, 0.08);
+    stroke-width: 3;
+    stroke-dasharray: 6 6;
+}
+
+.lineOutput {
+    fill: none;
+    stroke: rgba(26, 71, 42, 0.2);
+    stroke-width: 3;
+    /* Removed dasharray to make it a solid line */
+}
+
+/* NodesOverlay */
+.nodesOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.node {
+    position: absolute;
+    transform: translate(-50%, -32px);
+    /* Centering exactly on the icon (64px / 2) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.icon {
+    width: 64px;
+    /* Default PC icon size */
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f2e4;
+    /* Official Brand Color Sync */
+    border-radius: 16px;
+    flex-shrink: 0;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 10px;
+}
+
+.icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.label {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--color-primary-dark);
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* PC POSITIONS */
+.in1 {
+    left: 15%;
+    top: 20%;
+}
+
+.in2 {
+    left: 15%;
+    top: 50%;
+}
+
+.in3 {
+    left: 15%;
+    top: 80%;
+}
+
+/* AI CENTER Styles */
+.hubNode {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -40px);
+    /* 40px is half of 80px circle */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hubCircle {
+    width: 80px;
+    height: 80px;
+    background: #f3f2e4;
+    /* Official Brand Color Sync */
+    border: 3px solid var(--color-primary);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 40px rgba(26, 71, 42, 0.15);
+    overflow: hidden;
+}
+
+.hubCircle img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Prevention of clipping */
+    padding: 8px;
+    /* Internal safety margin */
+}
+
+.hubTaskLabel {
+    font-size: 0.75rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: white;
+    padding: 2px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+/* Output Receiver */
+.outNode {
+    position: absolute;
+    left: 85%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+}
+
+.outCard {
+    position: relative;
+    background: #fbfbf9;
+    padding: 1.5rem 1rem;
+    border-radius: 20px;
+    border: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.outIcons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+}
+
+.badge {
+    background: white;
+    padding: 0.6rem 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    color: inherit;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.outIconWrapper {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.outIconWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.badge:hover,
+.badgeActive {
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 20px rgba(26, 71, 42, 0.12);
+    transform: translateY(-2px);
+}
+
+.badgeActive .label {
+    color: var(--color-primary);
+}
+
+.outTitle {
+    font-size: 0.65rem;
+    font-weight: 800;
+    opacity: 0.3;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+
+/* Previews (Tooltips) */
+.previewOverlay {
+    position: absolute;
+    left: 110%;
+    top: 50%;
+    transform: translateY(-50%) !important;
+    width: 280px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    z-index: 100;
+}
+
+.previewContent h5 {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--color-primary-dark);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+}
+
+/* Excel Preview */
+.previewExcel table {
+    width: 100%;
+    font-size: 0.7rem;
+    border-collapse: collapse;
+}
+
+.previewExcel th {
+    text-align: left;
+    opacity: 0.5;
+    font-weight: 800;
+}
+
+.previewExcel td {
+    padding: 8px 0;
+    border-bottom: 1px solid #f8f8f8;
+    color: #444;
+}
+
+.excelHeader {
+    color: #217346;
+    font-size: 0.65rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+/* PDF Preview */
+.pdfPage {
+    background: #fafafa;
+    padding: 1.5rem;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.pdfTitle {
+    color: #E53935;
+    font-size: 0.75rem;
+    font-weight: 900;
+}
+
+.pdfLine {
+    height: 3px;
+    background: #E53935;
+    opacity: 0.1;
+    margin: 12px 0;
+}
+
+.pdfText {
+    font-size: 0.7rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* WhatsApp Preview */
+.previewWhatsapp {
+    margin-top: 10px;
+}
+
+.whatsappBubble {
+    font-size: 0.75rem;
+    padding: 12px 14px;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    background: #f0f0f0;
+    border-bottom-left-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.footerNote {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.pipelineInfo {
+    font-size: 1.1rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.5rem;
+}
+
+.subInfo {
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .pipelineSwitcher {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .pipelineTab {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+
+    .diagramArea {
+        height: 720px;
+        /* Increased to ensure all nodes fit vertically */
+        max-width: 450px;
+        margin: 2rem auto;
+    }
+
+    .nodesOverlay {
+        padding: 0 10px;
+    }
+
+    .svgLayer {
+        display: none;
+    }
+
+    .svgLayerMobile {
+        display: block;
+    }
+
+    .mobileOnlyG {
+        display: block;
+    }
+
+    .in1 {
+        left: 20%;
+        top: 10%;
+    }
+
+    .in2 {
+        left: 50%;
+        top: 10%;
+    }
+
+    .in3 {
+        left: 80%;
+        top: 10%;
+    }
+
+    .hubNode {
+        left: 50%;
+        top: 45%;
+        transform: translate(-50%, -37px);
+        /* half of 74px */
+    }
+
+    /* Lifted a bit to give room for output */
+    .outNode {
+        left: 50%;
+        top: 85%;
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .node {
+        transform: translate(-50%, -22px);
+        /* half of 44px */
+        flex-direction: column;
+        padding: 0.5rem;
+        gap: 0.3rem;
+        width: 90px;
+        min-height: 80px;
+        justify-content: center;
+    }
+
+    .icon {
+        width: 44px;
+        height: 44px;
+        padding: 4px;
+    }
+
+    .icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+    }
+
+    .hubCircle {
+        width: 74px;
+        height: 74px;
+        border-radius: 18px;
+        background: #f3f2e4;
+        /* Mobile Hub Sync */
+    }
+
+    .hubCircle img {
+        width: 85%;
+        /* Scaled relative to container */
+        height: 85%;
+        object-fit: contain;
+    }
+
+    .hubTaskLabel {
+        font-size: 0.65rem;
+        padding: 2px 6px;
+    }
+
+    .outIcons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .outCard {
+        padding: 1rem;
+        background: #fbfbf9;
+        border-radius: 15px;
+    }
+
+    .previewOverlay {
+        left: 50%;
+        top: -190px;
+        transform: translateX(-50%) translateY(0) !important;
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 600px) {
+    .label {
+        display: block;
+        font-size: 0.6rem;
+        margin-top: 4px;
+        text-align: center;
+        width: 100%;
+        color: var(--color-primary-dark);
+        font-weight: 800;
+    }
+
+    .node {
+        width: 64px;
+        height: auto;
+        padding: 0;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        flex-direction: column;
+        transform: translate(-50%, -30px);
+        /* half of 60px */
+    }
+
+    .icon {
+        width: 60px;
+        height: 60px;
+        background: #f3f2e4;
+        /* Mobile Icon Sync */
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        border-radius: 14px;
+        padding: 4px;
+    }
+
+    .badge {
+        width: auto;
+        min-width: 60px;
+        height: auto;
+        padding: 0;
+        background: transparent;
+        border: none;
+        flex-direction: column;
+        box-shadow: none;
+    }
+
+    .badgeActive {
+        background: transparent;
+    }
+
+    .outIconWrapper {
+        width: 52px;
+        height: 52px;
+        background: #f3f2e4;
+        /* Mobile Output Sync */
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        border-radius: 12px;
+        padding: 6px;
+        margin-bottom: 4px;
+    }
+
+    .badgeActive .outIconWrapper {
+        border-color: var(--color-primary);
+        box-shadow: 0 8px 20px rgba(26, 71, 42, 0.1);
+    }
+
+    .outTitle {
+        display: block;
+        font-size: 0.55rem;
+        margin-top: 10px;
+        opacity: 0.4;
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+    }
+
+    .outCard {
+        background: #fbfbf9;
+        /* Restored background */
+        border: 1px dashed rgba(0, 0, 0, 0.1);
+        /* Restored border */
+        padding: 1.25rem 0.75rem;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .previewOverlay {
+        top: -160px;
+    }
+}

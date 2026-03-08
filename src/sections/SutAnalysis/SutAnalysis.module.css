@@ -1,0 +1,452 @@
+.featuresSection {
+    padding: 10rem 0;
+    background-color: #f7f7f2;
+    /* Subtle variant of brand cream */
+    overflow: hidden;
+    position: relative;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 8rem;
+    align-items: center;
+}
+
+.accent {
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 700;
+}
+
+.sectionTitle {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--color-primary-dark);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.04em;
+}
+
+.sectionDesc {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+    max-width: 480px;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.step {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.stepNumber {
+    width: 48px;
+    height: 48px;
+    background: white;
+    border: 1px solid rgba(26, 71, 42, 0.08);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+}
+
+.stepTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: 0.4rem;
+}
+
+.stepDesc {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Modern Browser Mockup */
+.browserMockup {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.12), 0 15px 35px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.browserHeader {
+    background: var(--color-primary);
+    backdrop-filter: blur(10px);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.browserControls {
+
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #e0e0e0;
+}
+
+.dot:nth-child(1) {
+    background: #ff5f56;
+}
+
+.dot:nth-child(2) {
+    background: #ffbd2e;
+}
+
+.dot:nth-child(3) {
+    background: #27c93f;
+}
+
+.browserNav {
+    display: flex;
+    gap: 15px;
+    color: #bbb;
+    font-size: 1rem;
+}
+
+.addressBar {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.pharelName {
+    color: #fff;
+    font-style: italic;
+    font-weight: 800;
+}
+
+.status {
+    color: #27C93F;
+    font-weight: 700;
+    font-size: 0.65rem;
+}
+
+/* Browser Body Content */
+.browserContent {
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    background: #fdfdfd;
+}
+
+.topLogoBanner {
+    background: var(--color-primary-dark);
+    padding: 1.25rem;
+    display: flex;
+    justify-content: center;
+}
+
+.bannerLogoText {
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    opacity: 0.9;
+}
+
+.dashboardContainer {
+    flex: 1;
+    display: flex;
+}
+
+.sidebarPlaceholder {
+    width: 160px;
+    background: #f8f8f8;
+    border-right: 1px solid #f0f0f0;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sideLine {
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.mainWorkArea {
+    flex: 1;
+    padding: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+}
+
+.workflowLabel {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.liveBadge {
+    font-size: 0.65rem;
+    background: rgba(39, 201, 63, 0.1);
+    color: #27c93f;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.widgetGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.dataWidget {
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.widgetTitle {
+    font-size: 0.6rem;
+    font-weight: 800;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.progressCircle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: conic-gradient(var(--color-primary) 75%, #f0f0f0 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+.progressCircle::after {
+    content: '75%';
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--color-primary);
+}
+
+.statBar {
+    height: 6px;
+    background: #f0f0f0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.statFill {
+    height: 100%;
+    background: var(--color-primary);
+    border-radius: 3px;
+    width: 85%;
+}
+
+.actionBtn {
+    margin-top: auto;
+    background: var(--color-primary);
+    color: white;
+    padding: 0.85rem 1.8rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border: none;
+    align-self: flex-start;
+    box-shadow: 0 10px 25px rgba(26, 71, 42, 0.15);
+    transition: all 0.3s ease;
+}
+
+.browserFooter {
+    background: #fafafa;
+    border-top: 1px solid #f0f0f0;
+    padding: 0.75rem;
+    font-size: 0.65rem;
+    color: #aaa;
+    text-align: center;
+}
+
+/* AI Floating Overlay */
+.aiOverlay {
+    position: absolute;
+    bottom: 90px;
+    right: -45px;
+    width: 250px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    padding: 1.5rem;
+    border-radius: 22px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    z-index: 10;
+}
+
+.aiTag {
+    color: var(--color-primary);
+    font-weight: 900;
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.aiTag::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #27c93f;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(39, 201, 63, 0.8);
+    animation: glow 2s infinite ease-in-out;
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+.aiOverlay p {
+    font-size: 0.85rem;
+    color: #444;
+    line-height: 1.5;
+}
+
+@media (max-width: 1200px) {
+    .grid {
+        gap: 4rem;
+    }
+
+    .aiOverlay {
+        right: 20px;
+        bottom: 40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .textContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sectionDesc {
+        margin-inline: auto;
+    }
+
+    .steps {
+        align-items: center;
+        max-width: 600px;
+    }
+
+    .step {
+        text-align: left;
+    }
+
+    .visualContent {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .browserHeader {
+        gap: 1rem;
+    }
+
+    .browserNav {
+        display: none;
+    }
+
+    .dashboardContainer {
+        flex-direction: column;
+    }
+
+    .sidebarPlaceholder {
+        display: none;
+    }
+
+    .skeletonGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .aiOverlay {
+        width: 90%;
+        position: relative;
+        right: 0;
+        bottom: 0;
+        margin: -50px auto 0;
+    }
+}

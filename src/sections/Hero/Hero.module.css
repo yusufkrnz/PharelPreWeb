@@ -1,0 +1,647 @@
+.hero {
+    padding-top: 130px;
+    padding-bottom: 6rem;
+    background: radial-gradient(circle at 50% -10%, rgba(26, 71, 42, 0.05) 0%, transparent 50%);
+    text-align: center;
+}
+
+.heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(26, 71, 42, 0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: 1px solid rgba(26, 71, 42, 0.1);
+}
+
+.pulse {
+    width: 8px;
+    height: 8px;
+    background: #27c93f;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(39, 201, 63, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 8px rgba(39, 201, 63, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(39, 201, 63, 0);
+    }
+}
+
+.title {
+    font-family: var(--font-main);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--color-primary-dark);
+    letter-spacing: -0.02em;
+    max-width: 800px;
+}
+
+.serif {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.subtitle {
+    max-width: 580px;
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+.btnGroup {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.btnPrimary {
+    background: var(--color-primary);
+    color: white !important;
+    padding: 0.9rem 2.4rem;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(26, 71, 42, 0.15);
+    display: inline-block;
+}
+
+.btnSecondary {
+    background: transparent;
+    color: var(--color-primary-dark);
+    padding: 0.9rem 2.4rem;
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: 1px solid rgba(26, 71, 42, 0.2);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* App Window Mockup - Precise Style */
+.appHeaderFemale {
+    background: linear-gradient(90deg, #fce4ec 0%, #f8bbd0 100%) !important;
+    border-bottom: 1px solid #f48fb1 !important;
+}
+
+.flipNameFemale {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #d63384;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+.pharelBrandFemale {
+    color: #d63384;
+    font-style: italic;
+}
+
+.brandColorFemale {
+    color: #d63384 !important;
+    font-style: italic;
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.mockupContainer {
+    margin-top: 4.5rem;
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 1rem;
+}
+
+.appWindow {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.appHeader {
+    background: #f8f8f8;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    position: relative;
+    transition: all 0.8s ease-in-out;
+}
+
+.appHeaderFemale {
+    background: linear-gradient(90deg, #fce4ec 0%, #f8bbd0 100%) !important;
+    border-bottom: 1px solid #f48fb1 !important;
+}
+
+.asistanInfo small {
+    color: #27c93f;
+    font-size: 0.65rem;
+    transition: all 0.8s ease-in-out;
+}
+
+.statusFemale {
+    color: #d63384 !important;
+}
+
+.chatTags span {
+    background: #f8f8f8;
+    border: 1px solid #f0f0f0;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #777;
+    transition: all 0.8s ease-in-out;
+}
+
+.chatTagsFemale span {
+    color: #d63384 !important;
+    background: rgba(214, 51, 132, 0.05) !important;
+    border-color: rgba(214, 51, 132, 0.1) !important;
+}
+
+.actionWithIcon {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(26, 71, 42, 0.05);
+    padding: 2px 8px;
+    border-radius: 6px;
+    align-self: flex-start;
+    transition: all 0.8s ease-in-out;
+}
+
+.actionWithIconFemale {
+    background: rgba(214, 51, 132, 0.08) !important;
+}
+
+.windowControls {
+    display: flex;
+    gap: 6px;
+    position: absolute;
+    left: 1rem;
+}
+
+.windowControls span {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+.appTitle {
+    flex: 1;
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #666;
+}
+
+.appBody {
+    display: flex;
+    height: 520px;
+}
+
+/* Sidebar Left */
+.sidebar {
+    width: 220px;
+    background: #fdfdfd;
+    border-right: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.sidebarBrand.hero {
+    padding: 10rem 0 0rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.pharelBrand {
+    color: var(--color-primary);
+    font-style: italic;
+}
+
+.sidebarBrand {
+    padding: 1.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid #f5f5f5;
+    margin-bottom: 0.5rem;
+}
+
+.brandLogo {
+    width: 32px;
+    height: 32px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brandLogo img {
+    width: 70%;
+    height: auto;
+}
+
+.brandText strong {
+    display: block;
+    font-size: 0.85rem;
+    color: #333;
+    line-height: 1.2;
+}
+
+.brandText small {
+    font-size: 0.55rem;
+    color: #999;
+}
+
+.sideNav {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.navItem,
+.navItemActive {
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.navItem {
+    color: #666;
+}
+
+.navItem:hover {
+    background: #f5f5f5;
+}
+
+.navItemActive {
+    background: #00A86B;
+    /* App primary green */
+    color: white;
+    transition: all 0.8s ease-in-out;
+}
+
+.navItemActiveFemale {
+    background: #d63384 !important;
+    color: white !important;
+}
+
+.navIcon {
+    width: 16px;
+    height: 16px;
+}
+
+.sidebarVersion {
+    margin-top: auto;
+    padding: 1rem;
+    font-size: 0.65rem;
+    color: #ccc;
+}
+
+/* Main Area */
+.mainArea {
+    flex: 1;
+    padding: 3rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    background: white;
+}
+
+.typingHeader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.nameFlipper {
+    display: inline-flex;
+    position: relative;
+    height: 1.5em;
+    min-width: 140px;
+    vertical-align: middle;
+}
+
+.flipName {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-primary);
+    font-style: italic;
+    white-space: nowrap;
+}
+
+.welcomeBox h2 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.welcomeBox p {
+    font-size: 0.95rem;
+    color: #777;
+}
+
+.quickStats {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.statItem {
+    background: white;
+    border: 1px solid #f0f0ed;
+    padding: 0.6rem 1rem;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 140px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+
+.statItem small {
+    font-size: 0.55rem;
+    color: #a0a09a;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.actionWithIcon {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(26, 71, 42, 0.05);
+    padding: 2px 8px;
+    border-radius: 6px;
+    align-self: flex-start;
+}
+
+.brandColor {
+    color: var(--color-primary) !important;
+    font-style: italic;
+    font-size: 0.72rem;
+    /* Reduced size as requested */
+    font-weight: 800;
+}
+
+.statAction {
+    cursor: pointer;
+    border: 1px solid rgba(26, 71, 42, 0.08) !important;
+}
+
+.statAction:hover {
+    background: #fdfdf9;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(26, 71, 42, 0.06);
+    border-color: var(--color-primary) !important;
+}
+
+.perfWidget {
+    width: 260px;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    align-self: flex-end;
+}
+
+.widgetHead {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.widgetDot {
+    width: 6px;
+    height: 6px;
+    background: #27c93f;
+    border-radius: 50%;
+}
+
+.wStat {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-top: 1px solid #f9f9f9;
+}
+
+.wStat label {
+    font-size: 0.6rem;
+    font-weight: 800;
+    color: #999;
+}
+
+.wStat span {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #333;
+}
+
+/* Asistan Pane */
+.asistanPane {
+    width: 250px;
+    background: #ffffff;
+    border-left: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+}
+
+.asistanHeader {
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.asistanInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* Reduced horizontal gap */
+    text-align: left;
+}
+
+.asistanLogo {
+    width: 32px;
+    height: 32px;
+    background: #004d40;
+    color: white;
+    border-radius: 6px;
+    /* High-end square with slight rounding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+    overflow: hidden;
+    /* Ensure image doesn't overflow corners */
+}
+
+.logoImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Fill the square area */
+}
+
+.asistanInfo strong {
+    font-size: 0.85rem;
+    color: #333;
+    line-height: 1.1;
+}
+
+.asistanText {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    text-align: left;
+}
+
+.asistanText span {
+    font-size: 0.7rem;
+    color: #666;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.asistanInfo small {
+    color: #27c93f;
+    font-size: 0.6rem;
+}
+
+.asistanBody {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.chatTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.chatTags span {
+    background: #f8f8f8;
+    border: 1px solid #f0f0f0;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #777;
+}
+
+.chatMsg {
+    background: #f9f9f9;
+    padding: 0.85rem;
+    border-radius: 12px;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: #444;
+    text-align: left;
+}
+
+.chatMsg time {
+    display: block;
+    font-size: 0.6rem;
+    color: #ccc;
+    margin-top: 0.5rem;
+}
+
+.chatInput {
+    margin: 1rem;
+    padding: 0.7rem 1rem;
+    background: #f8f8f8;
+    border-radius: 20px;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #ccc;
+}
+
+@media (max-width: 1024px) {
+
+    .asistanPane,
+    .sidebar {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .appWindow {
+        display: none;
+    }
+
+    .btnGroup {
+        flex-direction: column;
+        width: 100%;
+    }
+}
